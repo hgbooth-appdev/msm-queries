@@ -96,33 +96,36 @@
     </th>
   </tr>
 
+<% @curMov.all.each do |m|%>
   <tr>
     <td>
-      8
+      <%= m.id%>
     </td>
 
     <td>
-      <img src="https://image.tmdb.org/t/p/w500/e5vzxBLagSoFh3LCA2zSj55AVc7.jpg" style="width:250px;">
+      <img src="<%= m.image%>" style="width:250px;">
     </td>
 
     <td>
-      Pulp Fiction
+      <%= m.title%>
     </td>
 
     <td>
-      1994
+      <%= m.year%>
     </td>
 
     <td>
-      Quentin Tarantino
+      <%= @curDir.name%>
     </td>
 
     <td>
-      <a href="/movies/8">
+      <a href="/movies/<%= m.id%>">
         Show details
       </a>
     </td>
   </tr>
+
+  <% end %>
 </tbody></table>
 
   
