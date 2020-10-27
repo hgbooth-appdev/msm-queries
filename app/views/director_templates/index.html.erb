@@ -1,2 +1,27 @@
 <h1>List of all directors</h1>
 
+
+<table border="1">
+
+<tr class="font-weight-bold">
+  <th>ID</th>
+  <th>Image</th>
+  <th>Name</th>
+  <th>Dob</th>
+  <th></th>
+</tr>
+<% @directors.each do |r| %>
+
+<tr>
+  
+  <td><%= r.id %></td>
+  <td><img src="<%= r.image %>"></td>
+  <td><%= r.name %></td>
+  <td><%= r.dob %></td>
+  <td><a href=".">Show details</a></td>
+
+</tr>
+
+<% end %>
+
+</table>
