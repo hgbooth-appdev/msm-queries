@@ -18,6 +18,19 @@ class DirectorsController < ActionController::Base
 
     render({ :template => "director_templates/eldest.html.erb"})
   end
+  
+  def youngest
+    ordered = Director.all.order({:dob => :desc})
+
+    youngest = ordered.where.not({ :dob => nil }).first
+
+    @resId = youngest.id
+    @resName = youngest.name
+    @resDob = youngest.dob
+
+
+    render({ :template => "director_templates/youngest.html.erb"})
+  end
 
   def dirDetails
     dirId = params.fetch("idNumber")
