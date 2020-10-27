@@ -55,14 +55,14 @@
     Created at
   </dt>
   <dd>
-    <%= @curDir.created_at %>
+    <%= time_ago_in_words(@curDir.created_at) %>
   </dd>
 
   <dt>
     Updated at
   </dt>
   <dd>
-    <%= @curDir.updated_at %>
+    <%= time_ago_in_words(@curDir.updated_at) %>
   </dd>
 </dl>
 
