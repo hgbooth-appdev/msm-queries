@@ -9,13 +9,20 @@ class ActorsController < ActionController::Base
   
 
   def actDetails
-    movId = params.fetch("idNumber")
+    actId = params.fetch("idNumber")
 
-    @curMove = Movie.where({:id => movId}).first
+    @curAct = Actor.where({:id => actId}).first
+    
+    @chars = Character.where({:actor_id => actId})
 
-    dirId = @curMove.director_id
-    @curDir = Director.where({:id => dirId}).first
+    # movies = []
 
+    # chars.each do |c|
+    #   movies.append(c.movie_id)
+
+    # end
+
+    # @movs = Movie.where({:id => movies})
 
     render({ :template => "actor_templates/actDetail.html.erb"})
 
