@@ -37,8 +37,7 @@ class DirectorsController < ActionController::Base
 
     @curDir = Director.where({:id => dirId}).first
     @curMov = Movie.where({:director_id => dirId})
-
-
+    
     render({ :template => "director_templates/details.html.erb"})
 
   end

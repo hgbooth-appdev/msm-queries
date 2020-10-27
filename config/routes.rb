@@ -10,5 +10,8 @@ Rails.application.routes.draw do
 
   get("/movies", { :controller => "movies", :action => "index" })
   get("/movies/:idNumber", { :controller => "movies", :action => "movDetails" })
+  
+  get("/actors", { :controller => "actors", :action => "index" })
+  get("/actors/:idNumber", { :controller => "actors", :action => "actDetails" })
 
 end
