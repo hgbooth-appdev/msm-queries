@@ -90,16 +90,14 @@
 <% @chars.each do |c|%>
 
 <% mov = Movie.where({:id => c.movie_id}).first %>
-<% dir = Director.where({:id => mov.director_id}) %>
+<% dir = Director.where({:id => mov.director_id}).first %>
 
 <tr>
-<td><%= mov.title %></td>
-<td><%= mov.year %></td>
-<td><%= dir.name %></td>
-<td><%= c.name %></td>
-<td><a href="/movies/<%= mov.id %>">Show details</a></td>
-
-
+  <td><%= mov.title %></td>
+  <td><%= mov.year %></td>
+  <td><%= dir.name %></td>
+  <td><%= c.name %></td>
+  <td><a href="/movies/<%= mov.id %>">Show details</a></td>
 </tr>
 
 
