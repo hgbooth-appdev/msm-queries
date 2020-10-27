@@ -35,6 +35,12 @@ class DirectorsController < ActionController::Base
   def dirDetails
     dirId = params.fetch("idNumber")
 
+    @curDir = Director.where({:id => dirId}).first
+
+
+
+    render({ :template => "director_templates/details.html.erb"})
+
   end
 
 end
