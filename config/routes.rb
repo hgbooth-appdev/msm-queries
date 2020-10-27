@@ -8,5 +8,7 @@ Rails.application.routes.draw do
 
   get("/directors/:idNumber", { :controller => "directors", :action => "dirDetails" })
 
+  get("/movies", { :controller => "movies", :action => "index" })
+  get("/movies/:idNumber", { :controller => "movies", :action => "movDetails" })
 
 end

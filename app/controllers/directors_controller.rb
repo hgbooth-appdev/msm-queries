@@ -36,7 +36,6 @@ class DirectorsController < ActionController::Base
     dirId = params.fetch("idNumber")
 
     @curDir = Director.where({:id => dirId}).first
-
     @curMov = Movie.where({:director_id => dirId})
 
 
